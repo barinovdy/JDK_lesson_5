@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
 
         List<String> philosopherNames = new ArrayList<>(Arrays.asList(
-                "Сократ", "Платон" , "Аристотель", "Пифагор", "Гиппократ"
+                "Сократ", "Платон", "Аристотель", "Пифагор", "Гиппократ"
         ));
 
         new Thread(new Table(philosopherNames)).start();

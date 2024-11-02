@@ -40,7 +40,7 @@ public class Table implements Runnable {
         }
     }
 
-    public boolean takeForks(int leftFork, int rightFork){
+    public synchronized boolean takeForks(int leftFork, int rightFork){
         if (forksAvailable[leftFork] & forksAvailable[rightFork]) {
             forksAvailable[leftFork] = false;
             forksAvailable[rightFork] = false;
