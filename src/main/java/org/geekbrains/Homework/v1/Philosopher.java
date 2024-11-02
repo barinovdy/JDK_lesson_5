@@ -9,8 +9,6 @@ public class Philosopher implements Runnable {
     private static int MIN_EAT_TIME = 1000;
     private static int MAX_THINK_TIME = 7000;
     private static int MIN_THINK_TIME = 2000;
-    private static int MAX_TIME_BETWEEN_EAT = 1000;
-    private static int MIN_TIME_BETWEEN_EAT = 500;
 
     private String name;
     Table table;
@@ -22,7 +20,6 @@ public class Philosopher implements Runnable {
     private int eatCount = 0;
     private int eatCountPerTime = 0;
 
-    //public Philosopher(String name, boolean[] forksAvailable, Table table) {
     public Philosopher(String name, Table table, int leftFork, int rightFork, CountDownLatch philosopherEat, int eatMaxCount) {
         this.name = name;
         this.table = table;
@@ -55,16 +52,6 @@ public class Philosopher implements Runnable {
     }
 
     private void eat(){
-        /*
-        if (eatCountPerTime != 0) {
-            //Отдохнуть между двумя трапезами подряд
-            try {
-                Thread.sleep(new Random().nextInt(MIN_TIME_BETWEEN_EAT, MAX_TIME_BETWEEN_EAT));
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-        */
         if (eatCountPerTime < EAT_MAX_COUNT_PER_TIME) {
             //Если поели менее двух раз подряд
             if (takeForks(leftFork, rightFork)){

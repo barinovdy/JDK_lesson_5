@@ -1,6 +1,5 @@
 package org.geekbrains.Homework.v1;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
@@ -9,7 +8,7 @@ public class Table implements Runnable {
 
     List<String> philosopherNames;
     Philosopher[] philosophers;
-    volatile boolean[] forksAvailable;
+    boolean[] forksAvailable;
     int leftFork;
     int rightFork;
     CountDownLatch philosopherEat;
